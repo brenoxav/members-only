@@ -16,6 +16,17 @@
   </head>
 
   <body>
+    <% if notice %>
+      <%= render "layouts/notice" %>
+    <% end %>
+
+    <% if alert %>
+      <%= render "layouts/alert" %>
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= render 'posts/navbar' %>
     <div class="container">
       <%= yield %>
