@@ -1,28 +1,21 @@
 <h1 class="my-3">Posts</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Body</th>
-      <th scope="col">User</th>
-      <th scope="col" colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @posts.each do |post| %>
+    <div class="col">
+      <div class="card text-dark bg-light h-100 mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.body %></p>
+        </div>
+        <div class="card-footer fst-italic">Anonymous</div>
+      </div>
+    </div>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%#= post.user_id %></td>
+
+  <% end %>
+</div>
 
 <br>
 
