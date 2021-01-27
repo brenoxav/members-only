@@ -1,0 +1,19 @@
+<h1 class="my-3">Posts</h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @posts.each do |post| %>
+    <div class="col">
+      <div class="card text-dark bg-light h-100 mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.body %></p>
+        </div>
+        <div class="card-footer"><h6 class="fst-italic"><strong><%= user_signed_in? ? post.user.username : 'Anonymous' %></strong></h6></div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Post', new_post_path, class: "btn btn-primary my-3" if user_signed_in? %>
