@@ -7,7 +7,7 @@
 ![screenshot](./app/assets/images/screenshot-1.png)
 ![screenshot](./app/assets/images/screenshot-2.png)
 
-An exclusive clubhouse where members can write anonymous posts. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
+This project makes use of the _Devise_ gem to implement basic user authentication. Only signed-in users can write new posts and see the author of other posts.
 
 ## Built With
 
